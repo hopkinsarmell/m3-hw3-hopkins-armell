@@ -19,160 +19,258 @@ html {
   margin: 20px auto 40px auto;
 }
 
+  
+
+
+
 body {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: @white;
+  a {
+    .links();
+  }
+  header{
+    height: 143px;
+    background: #f8df1f;
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
-    background: @white;
-    a {
-      .links();
-    }
-    header{
-      height: 143px;
-      background: #f8df1f;
-      width: 100%;
-      max-width: 1440px;
-      .block();
-      .desktop-menu{
-          display: none;
-        }
+    .block();
+    .desktop-menu{
+        display: none;
       }
-  
-       /* ******************************** HAMBURGER MENU STYLES *************************** */
-  
-      .hamburger {
-        background: none;
-        position: absolute;
-        top: 26px;
-        right: 24px;
-        line-height: 45px;
-        padding: 5px 15px 0px 15px;
-        color: #170b04;
-        border: 0;
-        font-size: 3em;
-        font-weight: bold;
-        cursor: pointer;
-        outline: none;
-        z-index: 10000000000000;
-      }
-      
-      .cross {
-        background: none;
-        position: absolute;
-        top: 38px;
-        right: 29px;
-        line-height: 45px;
-        padding: 5px 15px 0px 15px;
-        color: #170b04;
-        border: 0;
-        font-size: 5em;
-        font-weight: bold;
-        cursor: pointer;
-        outline: none;
-        z-index: 10000000000000;
-      }
-  
-      .menu {
-        z-index: 1000000; 
-        font-weight: bold; 
-        font-size: 0.8em; 
-        width: 100%; 
-        background:#f8df1f;  
-        position: absolute; 
-        text-align: center; 
-        font-size: @text;
-        ul:first-child {
-          padding-top: 70px;
+      @media (min-width: 850px) {
+        .desktop-menu {
+          display: block;
         }
         ul {
-          margin: 0; 
-          padding: 0; 
-          list-style-type: none; 
-          list-style-image: none;
-          li {
-            display: block;   
-            padding: 30px 0; 
-            border-bottom:#d6be09 2px solid;
+          text-align: center;
+        }
+        @media (min-width: 1200px) {
+          ul {
+            text-align: left;
+            margin-left: 101px;
           }
         }
-      }      
-      /* ******************************** HAMBURGER MENU STYLES END*************************** */
+          li {
+            display: inline-flex;
+            margin: 60px 0 0 43px;
+          }
+            .order-now a {
+              color: @secondary;
+              text-transform: @up;
+            }
+      }
+    }
 
-    .image-section {
+     /* ******************************** HAMBURGER MENU STYLES *************************** */
+
+    .hamburger {
+      background: none;
+      position: absolute;
+      top: 26px;
+      right: 24px;
+      line-height: 45px;
+      padding: 5px 15px 0px 15px;
+      color: #170b04;
+      border: 0;
+      font-size: 3em;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      z-index: 10000000000000;
+    }
+    
+    .cross {
+      background: none;
+      position: absolute;
+      top: 38px;
+      right: 29px;
+      line-height: 45px;
+      padding: 5px 15px 0px 15px;
+      color: #170b04;
+      border: 0;
+      font-size: 5em;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      z-index: 10000000000000;
+    }
+
+    .menu {
+      z-index: 1000000; 
+      font-weight: bold; 
+      font-size: 0.8em; 
+      width: 100%; 
+      background:#f8df1f;  
+      position: absolute; 
+      text-align: center; 
+      font-size: @text;
+      ul:first-child {
+        padding-top: 70px;
+      }
+      ul {
+        margin: 0; 
+        padding: 0; 
+        list-style-type: none; 
+        list-style-image: none;
+        li {
+          display: block;   
+          padding: 30px 0; 
+          border-bottom:#d6be09 2px solid;
+        }
+      }
+    }
+    @media (min-width: 850px) {
+      .hamburger, .cross, .menu {
+        display: none;
+      }
+    }
+    
+    /* ******************************** HAMBURGER MENU STYLES END*************************** */
+  
+  .image-section {
     background-image: url(img/banner-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 407px;
     background-position: center center;
-        img.logo {
-            width: 83%;
-            max-width: 426px;
-            display: block;
-            margin: 0 auto;
-            padding: 100px 0 17px 0;
-        }
+    img.logo {
+      width: 83%;
+      max-width: 426px;
+      display: block;
+      margin: 0 auto;
+      padding: 100px 0 17px 0;
     }
-    .burger-section {
-        background: #ffffff;
-        padding-bottom: 20px;
-        .burger {
-          max-width: 230px;
-          .img-fix();
-        }
-        .space {
-          margin: 41px 6%;
-          text-align: left;
-          h1 {
-            .heading-basics();
-            text-align: center;
-            margin-top: 20px;
-            span {
-              color: @secondary;
-              text-transform: @up;
-            }
-          }
-          p {
-            margin: 14px auto 31px auto;
-          }
+  }
+  .burger-section {
+    background: #ffffff;
+    padding-bottom: 20px;
+    .burger {
+      max-width: 230px;
+      .img-fix();
+    }
+    @media (min-width: 850px){
+      .burger {
+        padding: 100px 0;
+      }
+    }
+    .space {
+      margin: 41px 6%;
+      text-align: left;
+      h1 {
+        .heading-basics();
+        text-align: center;
+        margin-top: 20px;
+        span {
+          color: @secondary;
+          text-transform: @up;
         }
       }
-    .dine-section {
+        @media (min-width: 850px) { 
+          h1 { 
+            text-align: left;
+          }
+        }
+      p {
+        margin: 14px auto 31px auto;
+      }
+        @media (min-width: 850px) {
+          p { margin: 20px 0 0;}
+        }
+      @media (min-width: 850px) {
+        .space {
+          margin: 50px 0 0 50px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  @media (min-width: 850px) {
+
+    .burger-section {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      width: 80%;
+      margin: 0 66px;
+    }
+  }
+  .dine-section {
     background: #f3f3f3;
     padding-bottom: 20px;
     .headshot {
-        max-width: 168px;
-        .img-fix();
+      max-width: 168px;
+      .img-fix();
+    }
+    @media (min-width: 850px){
+      .headshot {
+        padding: 55px 7%;
+      }
     }
     .space {
-        margin: 41px 6%;
-        text-align: left;
-        h2 {
+      margin: 41px 6%;
+      text-align: left;
+      h2 {
         .heading-basics();
         text-align: center;
         span {
-            color: @secondary;
-            text-transform: @up;
+          color: @secondary;
+          text-transform: @up;
         }
-        }
-        p {
-        margin: 14px auto 31px auto;
-        }
-    }
-    }
-    .yellow-line {
-        height: 13px;
-        background:#f8df1f;
-        margin-top: -4px;
       }
-    footer {
-        background: #080801;
-        img.logo {
-            width: 72%;
-            max-width: 360px;
-            display: block;
-            margin: 0 auto;
-            padding: 33px 0 17px 0;
+      @media (min-width: 850px) { 
+        h2 { 
+          text-align: left;
+          margin-top: 23px;
         }
+      }
+      p {
+        margin: 14px auto 31px auto;
+      }
+      @media (min-width: 850px) {
+        p { margin: 7px 0px 20px;}
+      }
+      @media (min-width: 850px) {
+        .space {
+          margin: 50px 0 0 50px;
+          text-align: left;
+        }
+      }
     }
+  }
+  @media (min-width: 850px) {
+    .dine-section, .container {
+      display: inline-flex;
+      flex-direction: row;
+      padding: 0px;
+    }
+    .container {
+      width: 81%;
+      margin: 0 auto;
+    }
+  }
+
+  .yellow-line {
+    height: 13px;
+    background:#f8df1f;
+    margin-top: -4px;
+  }
+  footer {
+    background: #080801;
+    img.logo {
+      width: 72%;
+      max-width: 360px;
+      display: block;
+      margin: 0 auto;
+      padding: 33px 0 17px 0;
+    }
+  }
 }
+
+
+
+
+
+
 
